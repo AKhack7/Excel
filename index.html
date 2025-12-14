@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SUM Formula - AKhack7</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">AKhack7</div>
+      <div class="formula-name">SUM Formula</div>
+      <div class="home-btn" id="homeBtn">🏠</div>
+    </header>
+
+    <main>
+      <section class="description">
+        <h2>सम फॉर्मूला क्या है? (What is SUM Formula?)</h2>
+        <p>
+          <strong>हिंदी में:</strong> SUM फॉर्मूला Excel में कई नंबर्स को जल्दी जोड़ने के लिए इस्तेमाल होता है।<br><br>
+          <strong>English:</strong> The SUM function in Excel adds up a range of numbers quickly and accurately.
+        </p>
+      </section>
+
+      <h3 class="section-title">📌 उदाहरण (Example - Do Not Edit)</h3>
+      <div class="excel-box">
+        <table>
+          <thead>
+            <tr>
+              <th>A</th>
+              <th>B</th>
+              <th>C (SUM)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="number" value="45" readonly /></td>
+              <td><input type="number" value="78" readonly /></td>
+              <td class="sum-cell">123</td>
+            </tr>
+            <tr>
+              <td><input type="number" value="120" readonly /></td>
+              <td><input type="number" value="95" readonly /></td>
+              <td class="sum-cell">215</td>
+            </tr>
+            <tr>
+              <td><input type="number" value="33" readonly /></td>
+              <td><input type="number" value="67" readonly /></td>
+              <td class="sum-cell">100</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <section class="formula-section">
+        <div class="formula">=SUM(A1:B1)</div>
+        <div class="explanation">
+          <strong>व्याख्या:</strong><br>
+          यह फॉर्मूला A1 और B1 सेल में मौजूद नंबर्स को जोड़कर C1 में दिखाता है।<br><br>
+          <strong>Explanation:</strong><br>
+          This formula adds the numbers in cells A1 and B1 and displays the result in C1.<br>
+          आप रेंज भी दे सकते हैं जैसे =SUM(A1:A10) या अलग-अलग सेल जैसे =SUM(A1, B1, C5)
+        </div>
+      </section>
+
+      <h3 class="section-title">⚡ अब आप ट्राई करें (Practice Here - Edit Freely)</h3>
+      <div class="excel-box">
+        <table>
+          <thead>
+            <tr>
+              <th>A</th>
+              <th>B</th>
+              <th>C (SUM)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="number" class="num" value="250" /></td>
+              <td><input type="number" class="num" value="180" /></td>
+              <td class="sum-cell" id="sum4">430</td>
+            </tr>
+            <tr>
+              <td><input type="number" class="num" value="500" /></td>
+              <td><input type="number" class="num" value="300" /></td>
+              <td class="sum-cell" id="sum5">800</td>
+            </tr>
+            <tr>
+              <td><input type="number" class="num" value="99" /></td>
+              <td><input type="number" class="num" value="150" /></td>
+              <td class="sum-cell" id="sum6">249</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="buttons">
+        <button class="btn-prev" id="prevBtn">◀ Previous</button>
+        <button class="btn-video" id="videoBtn">▶ Video Tutorial</button>
+        <button class="btn-next" id="nextBtn">Next ▶</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
