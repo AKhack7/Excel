@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACCRINT Formula - Excel Sikhe</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+        header {
+            background: linear-gradient(90deg, #0288d1, #00acc1);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .formula-name {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .home {
+            font-size: 40px;
+            cursor: pointer;
+        }
+        .description {
+            padding: 30px;
+            text-align: center;
+            background: #f0f8ff;
+        }
+        .description h2 {
+            margin-bottom: 10px;
+            color: #0288d1;
+        }
+        .how-it-works {
+            padding: 30px;
+            background: #e8f5e9;
+            margin: 0 30px 30px;
+            border-radius: 10px;
+            border-left: 5px solid #00acc1;
+        }
+        .how-it-works h2 {
+            color: #00acc1;
+            text-align: center;
+        }
+        .example-box {
+            margin: 0 30px 30px;
+            border: 2px solid #0288d1;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .box-title {
+            background: #0288d1;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 12px;
+            border: 1px solid #ccc;
+        }
+        .label {
+            background: #e3f2fd;
+            font-weight: bold;
+            text-align: left;
+            width: 60%;
+        }
+        .value {
+            text-align: center;
+        }
+        .readonly {
+            background: #f0f8ff;
+            font-weight: bold;
+            color: #0288d1;
+            font-size: 18px;
+        }
+        .editable {
+            text-align: center;
+        }
+        .editable input {
+            width: 100%;
+            border: none;
+            text-align: center;
+            font-size: 16px;
+            padding: 5px;
+            background: transparent;
+        }
+        .editable input:focus {
+            background: #e3f2fd;
+            outline: none;
+        }
+        .buttons {
+            text-align: center;
+            padding: 30px;
+            background: #f0f8ff;
+        }
+        .btn {
+            display: inline-block;
+            margin: 0 15px;
+            padding: 14px 35px;
+            background: #00acc1;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 18px;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .btn:hover {
+            background: #00838f;
+            transform: translateY(-3px);
+        }
+        .interactive {
+            border: 3px solid #00c853 !important;
+        }
+        .note {
+            font-size: 14px;
+            color: #555;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">⚡ AKhack7</div>
+            <div class="formula-name">ACCRINT</div>
+            <div class="home" title="Home">🏠</div>
+        </header>
+
+        <div class="description">
+            <h2>ACCRINT Function (English)</h2>
+            <p>The ACCRINT function calculates the accrued interest for a security that pays periodic interest.</p>
+            <p><strong>Syntax:</strong> =ACCRINT(issue, first_interest, settlement, rate, par, frequency, [basis], [calc_method])</p>
+
+            <h2>ACCRINT फंक्शन (हिंदी)</h2>
+            <p>ACCRINT फंक्शन उस सिक्योरिटी के लिए अर्जित ब्याज की गणना करता है जो समय-समय पर ब्याज देती है।</p>
+            <p><strong>सिंटैक्स:</strong> =ACCRINT(issue, first_interest, settlement, rate, par, frequency, [basis], [calc_method])</p>
+        </div>
+
+        <div class="example-box">
+            <div class="box-title">उदाहरण (Example - Fixed)</div>
+            <table>
+                <tr><td class="label">Par Value</td><td class="value">27000</td></tr>
+                <tr><td class="label">Annual Rate</td><td class="value">9%</td></tr>
+                <tr><td class="label">Issue Date</td><td class="value">11-04-2025</td></tr>
+                <tr><td class="label">First Interest Date</td><td class="value">12-04-2025</td></tr>
+                <tr><td class="label">Settlement Date</td><td class="value">11-05-2025</td></tr>
+                <tr><td class="label">Frequency</td><td class="value">1</td></tr>
+                <tr><td class="label">Basis</td><td class="value">3</td></tr>
+                <tr><td class="label readonly">Interest (Accrued)</td><td class="value readonly">199.7260274</td></tr>
+            </table>
+        </div>
+
+        <div class="how-it-works">
+            <h2>ACCRINT फॉर्मूला कैसे काम करता है? (How ACCRINT Works)</h2>
+            <p><strong>English:</strong> The ACCRINT function calculates the interest accrued from the issue date to the settlement date. For simple cases (like when basis=3 i.e. Actual/365), it uses: <br>
+            <strong>Accrued Interest = Par Value × Annual Rate × (Actual Days between Issue and Settlement / 365)</strong></p>
+            
+            <p><strong>हिंदी:</strong> ACCRINT फंक्शन इश्यू डेट से सेटलमेंट डेट तक जमा हुआ ब्याज कैलकुलेट करता है। सरल मामलों में (जैसे basis=3 यानी Actual/365), यह फॉर्मूला इस्तेमाल करता है: <br>
+            <strong>अर्जित ब्याज = Par Value × Annual Rate × (इश्यू और सेटलमेंट के बीच वास्तविक दिन / 365)</strong></p>
+            
+            <p class="note">नोट: अगर पहला पीरियड अनियमित (odd) हो तो कैलकुलेशन थोड़ा कॉम्प्लिकेटेड होता है, लेकिन इस उदाहरण में डेट्स बहुत करीब हैं इसलिए सिंपल फॉर्मूला सटीक रिजल्ट देता है।</p>
+        </div>
+
+        <div class="example-box interactive">
+            <div class="box-title">इंटरएक्टिव उदाहरण (Interactive - वैल्यू बदलकर देखें)</div>
+            <table>
+                <tr><td class="label">Par Value</td><td class="editable"><input type="text" id="par" value="27000"></td></tr>
+                <tr><td class="label">Annual Rate</td><td class="editable"><input type="text" id="rate" value="0.09"></td></tr>
+                <tr><td class="label">Issue Date</td><td class="editable"><input type="text" id="issue" value="2025-04-11" placeholder="YYYY-MM-DD"></td></tr>
+                <tr><td class="label">First Interest Date</td><td class="editable"><input type="text" id="first" value="2025-04-12" placeholder="YYYY-MM-DD"></td></tr>
+                <tr><td class="label">Settlement Date</td><td class="editable"><input type="text" id="settle" value="2025-05-11" placeholder="YYYY-MM-DD"></td></tr>
+                <tr><td class="label">Frequency</td><td class="editable"><input type="text" id="freq" value="1"></td></tr>
+                <tr><td class="label">Basis</td><td class="editable"><input type="text" id="basis" value="3"></td></tr>
+                <tr><td class="label readonly">Interest (Accrued)</td><td class="value readonly" id="result">199.7260274</td></tr>
+            </table>
+        </div>
+
+        <div class="buttons">
+            <a href="#" class="btn">Previous</a>
+            <a href="#" class="btn">Next</a>
+            <a href="#" class="btn">Video 📹</a>
+        </div>
+    </div>
+
+    <script>
+        const inputs = document.querySelectorAll('.editable input');
+        const resultCell = document.getElementById('result');
+
+        function calculateAccrued() {
+            try {
+                const par = parseFloat(document.getElementById('par').value) || 0;
+                const rate = parseFloat(document.getElementById('rate').value) || 0;
+                const issueStr = document.getElementById('issue').value;
+                const settleStr = document.getElementById('settle').value;
+                const basisVal = parseInt(document.getElementById('basis').value) || 0;
+
+                if (!issueStr || !settleStr) {
+                    resultCell.textContent = 'Invalid Date';
+                    return;
+                }
+
+                const issue = new Date(issueStr);
+                const settle = new Date(settleStr);
+
+                if (isNaN(issue) || isNaN(settle)) {
+                    resultCell.textContent = 'Invalid Date';
+                    return;
+                }
+
+                const days = (settle - issue) / (1000 * 60 * 60 * 24);
+
+                let denominator = 365;
+                if (basisVal === 0 || basisVal === 2 || basisVal === 4) {
+                    // Approximate 30/360 - but simple for now
+                    denominator = 360;
+                } else if (basisVal === 1) {
+                    denominator = 360; // actual/360 approx
+                }
+                // basis 3: actual/365
+
+                const accrued = par * rate * (days / denominator);
+                resultCell.textContent = accrued.toFixed(10);
+            } catch (e) {
+                resultCell.textContent = 'Error';
+            }
+        }
+
+        inputs.forEach(input => {
+            input.addEventListener('input', calculateAccrued);
+        });
+
+        // Initial calculation
+        calculateAccrued();
+    </script>
+</body>
+</html>
