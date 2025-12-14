@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABS (Absolute Value) Formula</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #fff3e0);
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            min-height: 100vh;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff;
+            padding: 15px 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .home {
+            font-size: 36px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .home:hover {
+            transform: scale(1.2);
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        .description {
+            margin-bottom: 30px;
+            line-height: 1.7;
+            font-size: 18px;
+        }
+        .description h3 {
+            color: #e67e22;
+            margin-top: 25px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: #f8f9fa;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        th {
+            background: #3498db;
+            color: white;
+            padding: 15px;
+            font-size: 18px;
+        }
+        td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        input {
+            width: 100px;
+            padding: 10px;
+            border: 2px solid #bdc3c7;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 16px;
+        }
+        input:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 8px rgba(52,152,219,0.3);
+        }
+        .readonly {
+            background: #ecf0f1;
+            border: none;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .formula-section {
+            background: #f1f8ff;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border-left: 6px solid #3498db;
+        }
+        .formula {
+            font-size: 28px;
+            font-weight: bold;
+            color: #e74c3c;
+            text-align: center;
+            margin: 15px 0;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+        button {
+            padding: 12px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .next { background: #27ae60; color: white; }
+        .prev { background: #95a5a6; color: white; }
+        .video { background: #e74c3c; color: white; }
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2 { text-align: center; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">⚡ AKhack7</div>
+        <div class="title">ABS (Absolute Value) Formula</div>
+        <div class="home" title="Home">🏠</div>
+    </header>
+
+    <div class="container">
+        <div class="description">
+            <h3>English Description</h3>
+            <p>The ABS function in Excel returns the absolute value of a number. The absolute value of a number is the number without its sign (positive or negative). It always returns a positive number.</p>
+            
+            <h3>हिंदी विवरण</h3>
+            <p>Excel में ABS फंक्शन किसी संख्या का निरपेक्ष मान (Absolute Value) लौटाता है। निरपेक्ष मान का मतलब है कि संख्या बिना उसके चिन्ह (धनात्मक या ऋणात्मक) के होती है। यह हमेशा धनात्मक संख्या ही लौटाता है।</p>
+        </div>
+
+        <!-- First Table - Read Only Example -->
+        <h2>Example (Read Only)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>ABS Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>-15</td><td class="readonly">15</td></tr>
+                <tr><td>42</td><td class="readonly">42</td></tr>
+                <tr><td>-8</td><td class="readonly">8</td></tr>
+                <tr><td>0</td><td class="readonly">0</td></tr>
+                <tr><td>-23.5</td><td class="readonly">23.5</td></tr>
+            </tbody>
+        </table>
+
+        <!-- Formula Explanation -->
+        <div class="formula-section">
+            <div class="formula">=ABS(number)</div>
+            <p><strong>व्याख्या:</strong> इस फॉर्मूले में "number" की जगह वह सेल पता या संख्या डालें जिसका आप निरपेक्ष मान निकालना चाहते हैं।<br>
+            उदाहरण: यदि सेल A1 में -10 है, तो =ABS(A1) लिखने पर परिणाम 10 आएगा।</p>
+            <p><strong>Explanation:</strong> In this formula, replace "number" with the cell reference or number whose absolute value you want.<br>
+            Example: If cell A1 contains -10, then =ABS(A1) will return 10.</p>
+        </div>
+
+        <!-- Second Table - Editable -->
+        <h2>Practice Yourself (Edit Name column)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name (Edit here)</th>
+                    <th>ABS Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><input type="text" class="editable" value="-25"></td><td class="readonly result">25</td></tr>
+                <tr><td><input type="text" class="editable" value="18"></td><td class="readonly result">18</td></tr>
+                <tr><td><input type="text" class="editable" value="-7"></td><td class="readonly result">7</td></tr>
+                <tr><td><input type="text" class="editable" value="0"></td><td class="readonly result">0</td></tr>
+                <tr><td><input type="text" class="editable" value="-33.7"></td><td class="readonly result">33.7</td></tr>
+            </tbody>
+        </table>
+
+        <div class="buttons">
+            <button class="prev">← Previous</button>
+            <button class="video">📹 Watch Video</button>
+            <button class="next">Next →</button>
+        </div>
+    </div>
+
+    <script>
+        // Automatically update ABS result when input changes
+        document.querySelectorAll('.editable').forEach(input => {
+            input.addEventListener('input', function() {
+                const row = this.parentElement.parentElement;
+                const resultCell = row.querySelector('.result');
+                const value = parseFloat(this.value);
+                
+                if (!isNaN(value)) {
+                    resultCell.textContent = Math.abs(value);
+                } else {
+                    resultCell.textContent = 'Invalid';
+                }
+            });
+        });
+
+        // Initial calculation on page load
+        document.querySelectorAll('.editable').forEach(input => {
+            const row = input.parentElement.parentElement;
+            const resultCell = row.querySelector('.result');
+            const value = parseFloat(input.value);
+            if (!isNaN(value)) {
+                resultCell.textContent = Math.abs(value);
+            }
+        });
+
+        // Button actions (you can link these later)
+        document.querySelector('.next').onclick = () => alert('Next topic आने वाला है!');
+        document.querySelector('.prev').onclick = () => alert('Previous topic पर जाएँ!');
+        document.querySelector('.video').onclick = () => {
+            // यहाँ अपना YouTube वीडियो लिंक डाल सकते हैं
+            window.open('https://www.youtube.com/results?search_query=excel+abs+function+hindi', '_blank');
+        };
+        document.querySelector('.home').onclick = () => {
+            alert('Home page पर जाएँ!');
+        };
+    </script>
+</body>
+</html>
