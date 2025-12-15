@@ -49,6 +49,8 @@
       font-size: 2.5em;
       cursor: pointer;
       transition: transform 0.3s;
+      text-decoration: none;
+      color: white;
     }
 
     .home-btn:hover {
@@ -135,7 +137,6 @@
       margin-top: 50px;
     }
 
-    /* <a> tags ko button jaisa banaya */
     .buttons a {
       display: inline-block;
       padding: 14px 32px;
@@ -167,7 +168,7 @@
   <header>
     <div class="logo">⚡AKhack7</div>
     <div class="title">ACCRINTM Formula</div>
-    <div class="home-btn" onclick="alert('Home Page Coming Soon!')">🏠</div>
+    <a href="https://akhack7.github.io/Excel/Home/h.html" class="home-btn">🏠</a>
   </header>
 
   <div class="container">
@@ -180,7 +181,7 @@
       <p><strong>ACCRINTM</strong> फंक्शन एक्सेल में उस सिक्योरिटी के लिए अर्जित ब्याज की गणना करता है जो परिपक्वता (maturity) पर ब्याज देती है। यह बॉन्ड या अन्य सिक्योरिटीज के लिए उपयोगी है जहां ब्याज केवल परिपक्वता पर ही दिया जाता है।</p>
     </div>
 
-    <!-- First Table - Fixed Example -->
+    <!-- First Table - Fixed Example (No Editing Allowed) -->
     <h2 style="color:#0f3443; text-align:center;">Example 1: Default Values (Cannot Edit)</h2>
     <table>
       <tr><th>Parameter</th><th>Value</th></tr>
@@ -204,7 +205,7 @@
       <p><strong>हिंदी:</strong> यह फंक्शन उस सिक्योरिटी के लिए इश्यू डेट से सेटलमेंट डेट तक का अर्जित ब्याज देता है जो परिपक्वता पर ब्याज देती है। [basis] पैरामीटर दिन गिनती की विधि तय करता है (यहाँ 3 = actual/360)।</p>
     </div>
 
-    <!-- Interactive Practice Table -->
+    <!-- Second Table - Interactive (Students Can Edit) -->
     <h2 style="color:#0f3443; text-align:center;">Practice Yourself (Edit Values & See Result)</h2>
     <table>
       <tr><th>Parameter</th><th>Value</th></tr>
@@ -218,7 +219,6 @@
       <tr><td><strong>Interest (Monthly Approx)</strong></td><td><input type="text" id="result" readonly style="font-weight:bold; font-size:1.2em; background:#e8f5e9;"></td></tr>
     </table>
 
-    <!-- Navigation Buttons (Fixed) -->
     <div class="buttons">
       <a href="https://akhack7.github.io/Excel/A/accrint.html">← Previous</a>
       <a href="https://www.youtube.com/results?search_query=excel+accrintm+function+tutorial" class="video-btn" target="_blank">📹 Video Tutorial</a>
