@@ -39,6 +39,8 @@
             font-size: 36px;
             cursor: pointer;
             transition: transform 0.3s;
+            text-decoration: none;
+            color: inherit;
         }
         .home:hover {
             transform: scale(1.2);
@@ -118,7 +120,6 @@
             justify-content: space-between;
             margin-top: 40px;
         }
-        /* <a> ko button jaisa banaya */
         .buttons a {
             padding: 12px 30px;
             font-size: 18px;
@@ -144,7 +145,7 @@
     <header>
         <div class="logo">⚡ AKhack7</div>
         <div class="title">ABS (Absolute Value) Formula</div>
-        <div class="home" title="Home" href="https://akhack7.github.io/Excel/Home/h.html">🏠</div>
+        <a href="https://akhack7.github.io/Excel/Home/h.html" class="home" title="Home">🏠</a>
     </header>
 
     <div class="container">
@@ -156,7 +157,7 @@
             <p>Excel में ABS फंक्शन किसी संख्या का निरपेक्ष मान (Absolute Value) लौटाता है। निरपेक्ष मान का मतलब है कि संख्या बिना उसके चिन्ह (धनात्मक या ऋणात्मक) के होती है। यह हमेशा धनात्मक संख्या ही लौटाता है।</p>
         </div>
 
-        <!-- First Table - Read Only Example -->
+        <!-- Read Only Example -->
         <h2>Example (Read Only)</h2>
         <table>
             <thead>
@@ -183,7 +184,7 @@
             Example: If cell A1 contains -10, then =ABS(A1) will return 10.</p>
         </div>
 
-        <!-- Second Table - Editable -->
+        <!-- Editable Practice Table -->
         <h2>Practice Yourself (Edit Name column)</h2>
         <table>
             <thead>
@@ -201,15 +202,15 @@
             </tbody>
         </table>
 
-        <!-- Navigation Buttons (Fixed) -->
+        <!-- Navigation Buttons -->
         <div class="buttons">
-            <a href="#" class="video" target="_blank">📹 Watch Video</a>
+            <a href="https://www.youtube.com/results?search_query=excel+abs+function+hindi" class="video" target="_blank">📹 Watch Video</a>
             <a href="https://akhack7.github.io/Excel/A/accrint.html" class="next">Next →</a>
         </div>
     </div>
 
     <script>
-        // Automatically update ABS result when input changes
+        // Live update ABS result
         document.querySelectorAll('.editable').forEach(input => {
             input.addEventListener('input', function() {
                 const row = this.parentElement.parentElement;
@@ -224,7 +225,7 @@
             });
         });
 
-        // Initial calculation on page load
+        // Initial calculation
         document.querySelectorAll('.editable').forEach(input => {
             const row = input.parentElement.parentElement;
             const resultCell = row.querySelector('.result');
@@ -233,9 +234,6 @@
                 resultCell.textContent = Math.abs(value);
             }
         });
-
-        // Video button ka actual link (YouTube search)
-        document.querySelector('.video').href = 'https://www.youtube.com/results?search_query=excel+abs+function+hindi';
     </script>
 </body>
 </html>
