@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACCRINTM Formula - Excel Learning</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+      margin: 0;
+      padding: 0;
+      color: #333;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(to right, #0f3443, #0f5132);
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      border-bottom: 4px solid #ffd700;
+      border-radius: 0 0 20px 20px;
+    }
+
+    .logo {
+      font-size: 2.5em;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px #ffd700, 0 0 20px #ff9900;
+      transform: perspective(500px) rotateY(10deg);
+      transition: transform 0.3s;
+    }
+
+    .logo:hover {
+      transform: perspective(500px) rotateY(0deg) scale(1.1);
+    }
+
+    .title {
+      font-size: 2.2em;
+      font-weight: bold;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    }
+
+    .home-btn {
+      font-size: 2.5em;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .home-btn:hover {
+      transform: scale(1.2) rotate(10deg);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      backdrop-filter: blur(10px);
+    }
+
+    .description {
+      margin-bottom: 40px;
+      line-height: 1.8;
+      font-size: 1.1em;
+    }
+
+    .description h2 {
+      color: #0f3443;
+      border-bottom: 3px solid #ffd700;
+      padding-bottom: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+      background: #fff;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 16px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background: #0f3443;
+      color: white;
+      width: 40%;
+      font-weight: bold;
+    }
+
+    .yellow {
+      background-color: #fff9c4 !important;
+    }
+
+    .locked {
+      background-color: #f5f5f5;
+      color: #666;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+
+    input[readonly] {
+      background-color: #e0e0e0;
+      cursor: not-allowed;
+    }
+
+    .formula-section {
+      background: #e8f5e9;
+      padding: 25px;
+      border-radius: 12px;
+      margin: 40px 0;
+      border-left: 6px solid #4caf50;
+    }
+
+    .buttons {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .buttons button {
+      padding: 14px 32px;
+      margin: 0 15px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      background: linear-gradient(45deg, #0f3443, #1e6f5c);
+      color: white;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      transition: all 0.3s;
+    }
+
+    .buttons button:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    }
+
+    .video-btn {
+      background: linear-gradient(45deg, #d32f2f, #f44336) !important;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">⚡AKhack7</div>
+    <div class="title">ACCRINTM Formula</div>
+    <div class="home-btn" onclick="alert('Home Page Coming Soon!')">🏠</div>
+  </header>
+
+  <div class="container">
+
+    <div class="description">
+      <h2>Description (English)</h2>
+      <p>The <strong>ACCRINTM</strong> function in Excel calculates the accrued interest for a security that pays interest at maturity. It is useful for bonds or other securities where interest is paid only when the security matures.</p>
+
+      <h2>विवरण (हिंदी)</h2>
+      <p><strong>ACCRINTM</strong> फंक्शन एक्सेल में उस सिक्योरिटी के लिए अर्जित ब्याज की गणना करता है जो परिपक्वता (maturity) पर ब्याज देती है। यह बॉन्ड या अन्य सिक्योरिटीज के लिए उपयोगी है जहां ब्याज केवल परिपक्वता पर ही दिया जाता है।</p>
+    </div>
+
+    <!-- First Table - Fixed Example (No Editing Allowed) -->
+    <h2 style="color:#0f3443; text-align:center;">Example 1: Default Values (Cannot Edit)</h2>
+    <table>
+      <tr><th>Parameter</th><th>Value</th></tr>
+      <tr><td>Par Value</td><td>27000</td></tr>
+      <tr><td>Annual Rate</td><td>9%</td></tr>
+      <tr><td>Issue Date</td><td>11-04-2025</td></tr>
+      <tr><td class="yellow locked">First Interest Date</td><td class="yellow locked">Not Applicable</td></tr>
+      <tr><td>Settlement Date</td><td>11-05-2025</td></tr>
+      <tr><td class="yellow locked">Frequency</td><td class="yellow locked">Not Applicable</td></tr>
+      <tr><td>Basis</td><td>3</td></tr>
+      <tr><td><strong>Interest (Monthly Approx)</strong></td><td><strong>199.7260274</strong></td></tr>
+    </table>
+
+    <!-- Formula Explanation -->
+    <div class="formula-section">
+      <h2 style="color:#1e6f5c;">Formula</h2>
+      <p style="font-size:1.4em; font-weight:bold; color:#d32f2f;">
+        =ACCRINTM(issue, settlement, rate, par, [basis])
+      </p>
+      <p><strong>English:</strong> This function returns the accrued interest from the issue date to the settlement date for a security that pays interest at maturity. The [basis] parameter determines the day count convention (here 3 = actual/360).</p>
+      <p><strong>हिंदी:</strong> यह फंक्शन उस सिक्योरिटी के लिए इश्यू डेट से सेटलमेंट डेट तक का अर्जित ब्याज देता है जो परिपक्वता पर ब्याज देती है। [basis] पैरामीटर दिन गिनती की विधि तय करता है (यहाँ 3 = actual/360)।</p>
+    </div>
+
+    <!-- Second Table - Interactive (Students Can Edit) -->
+    <h2 style="color:#0f3443; text-align:center;">Practice Yourself (Edit Values & See Result)</h2>
+    <table>
+      <tr><th>Parameter</th><th>Value</th></tr>
+      <tr><td>Par Value</td><td><input type="number" id="par" value="27000" onchange="calculate()"></td></tr>
+      <tr><td>Annual Rate</td><td><input type="number" id="rate" value="9" step="0.01" onchange="calculate()"> %</td></tr>
+      <tr><td>Issue Date</td><td><input type="date" id="issue" value="2025-04-11" onchange="calculate()"></td></tr>
+      <tr><td class="yellow">First Interest Date</td><td class="yellow"><input type="date" id="first" value="2025-04-12" readonly></td></tr>
+      <tr><td>Settlement Date</td><td><input type="date" id="settlement" value="2025-05-11" onchange="calculate()"></td></tr>
+      <tr><td class="yellow">Frequency</td><td class="yellow"><input type="number" id="freq" value="1" readonly></td></tr>
+      <tr><td>Basis</td><td><input type="number" id="basis" value="3" min="0" max="4" onchange="calculate()"></td></tr>
+      <tr><td><strong>Interest (Monthly Approx)</strong></td><td><input type="text" id="result" readonly style="font-weight:bold; font-size:1.2em; background:#e8f5e9;"></td></tr>
+    </table>
+
+    <div class="buttons">
+      <button onclick="alert('Previous Page')">← Previous</button>
+      <button onclick="alert('Next Page')">Next →</button>
+      <button class="video-btn" onclick="window.open('https://www.youtube.com/results?search_query=excel+accrintm+function+tutorial', '_blank')">📹 Video Tutorial</button>
+    </div>
+
+  </div>
+
+  <script>
+    function calculate() {
+      const par = parseFloat(document.getElementById('par').value) || 0;
+      const rate = parseFloat(document.getElementById('rate').value) / 100 || 0;
+      const issue = new Date(document.getElementById('issue').value);
+      const settlement = new Date(document.getElementById('settlement').value);
+      const basis = parseInt(document.getElementById('basis').value) || 0;
+
+      if (isNaN(issue) || isNaN(settlement) || settlement <= issue) {
+        document.getElementById('result').value = "Invalid dates";
+        return;
+      }
+
+      // Calculate days between issue and settlement
+      const days = (settlement - issue) / (1000 * 60 * 60 * 24);
+
+      // Basis 3: Actual/360
+      const yearDays = 360;
+      const accruedInterest = par * rate * (days / yearDays);
+
+      // Monthly approximation
+      const monthlyApprox = accruedInterest / ((settlement - issue) / (1000 * 60 * 60 * 24 * 30.4167)); // approx 30.4167 days per month
+
+      document.getElementById('result').value = monthlyApprox.toFixed(7);
+    }
+
+    // Initial calculation
+    calculate();
+  </script>
+
+</body>
+</html>
