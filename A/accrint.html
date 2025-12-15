@@ -133,6 +133,13 @@
             background: #00838f;
             transform: translateY(-3px);
         }
+        /* Video button ke liye alag color (optional - agar chahte ho to) */
+        .btn-video {
+            background: #f44336;
+        }
+        .btn-video:hover {
+            background: #d32f2f;
+        }
         .interactive {
             border: 3px solid #00c853 !important;
         }
@@ -179,10 +186,10 @@
             <h2>ACCRINT फॉर्मूला कैसे काम करता है? (How ACCRINT Works)</h2>
             <p><strong>English:</strong> The ACCRINT function calculates the interest accrued from the issue date to the settlement date. For simple cases (like when basis=3 i.e. Actual/365), it uses: <br>
             <strong>Accrued Interest = Par Value × Annual Rate × (Actual Days between Issue and Settlement / 365)</strong></p>
-            
+
             <p><strong>हिंदी:</strong> ACCRINT फंक्शन इश्यू डेट से सेटलमेंट डेट तक जमा हुआ ब्याज कैलकुलेट करता है। सरल मामलों में (जैसे basis=3 यानी Actual/365), यह फॉर्मूला इस्तेमाल करता है: <br>
             <strong>अर्जित ब्याज = Par Value × Annual Rate × (इश्यू और सेटलमेंट के बीच वास्तविक दिन / 365)</strong></p>
-            
+
             <p class="note">नोट: अगर पहला पीरियड अनियमित (odd) हो तो कैलकुलेशन थोड़ा कॉम्प्लिकेटेड होता है, लेकिन इस उदाहरण में डेट्स बहुत करीब हैं इसलिए सिंपल फॉर्मूला सटीक रिजल्ट देता है।</p>
         </div>
 
@@ -200,9 +207,10 @@
             </table>
         </div>
 
+        <!-- Navigation Buttons (Fixed) -->
         <div class="buttons">
             <a href="https://akhack7.github.io/Excel/A/abs.html" class="btn">Previous</a>
-            <a href="https://www.youtube.com/results?search_query=excel+accrint+function+hindi" class="btn">Video 📹</a>
+            <a href="https://www.youtube.com/results?search_query=excel+accrint+function+hindi" class="btn btn-video" target="_blank">Video 📹</a>
             <a href="https://akhack7.github.io/Excel/A/accrintm.html" class="btn">Next</a>
         </div>
     </div>
