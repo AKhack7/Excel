@@ -210,7 +210,7 @@
     </div>
 
     <script>
-        // Live update ABS result
+        // Automatically update ABS result when input changes
         document.querySelectorAll('.editable').forEach(input => {
             input.addEventListener('input', function() {
                 const row = this.parentElement.parentElement;
@@ -225,7 +225,7 @@
             });
         });
 
-        // Initial calculation
+        // Initial calculation on page load
         document.querySelectorAll('.editable').forEach(input => {
             const row = input.parentElement.parentElement;
             const resultCell = row.querySelector('.result');
