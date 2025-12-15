@@ -50,6 +50,7 @@
       cursor: pointer;
       transition: transform 0.3s;
       text-decoration: none;
+      color: white;
     }
 
     .home-btn:hover {
@@ -132,7 +133,9 @@
       margin-top: 50px;
     }
 
-    .buttons button {
+    /* Button aur <a> dono ke liye same style */
+    .buttons a {
+      display: inline-block;
       padding: 14px 32px;
       margin: 0 15px;
       font-size: 1.2em;
@@ -143,9 +146,11 @@
       color: white;
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
       transition: all 0.3s;
+      text-decoration: none;
+      text-align: center;
     }
 
-    .buttons button:hover {
+    .buttons a:hover {
       transform: translateY(-5px) scale(1.05);
       box-shadow: 0 15px 30px rgba(0,0,0,0.3);
     }
@@ -235,10 +240,11 @@
       </tr>
     </table>
 
+    <!-- Navigation Buttons (Fixed) -->
     <div class="buttons">
-      <button onclick="window.open('https://akhack7.github.io/Excel/A/average.html')">← Previous</button>
-      <button onclick="alert('Next Page')">Next →</button>
-      <button class="video-btn" onclick="window.open('https://www.youtube.com/results?search_query=excel+acos+function+tutorial', '_blank')">📹 Video Tutorial</button>
+      <a href="https://akhack7.github.io/Excel/A/average.html">← Previous</a>
+      <a href="#">Next →</a> <!-- Yahan apna actual Next page ka URL daal dena -->
+      <a href="https://www.youtube.com/results?search_query=excel+acos+function+tutorial" class="video-btn" target="_blank">📹 Video Tutorial</a>
     </div>
 
   </div>
@@ -268,4 +274,3 @@
 
 </body>
 </html>
-
