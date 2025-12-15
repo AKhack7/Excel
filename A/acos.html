@@ -1,1 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACOS Formula - Excel Learning</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+      margin: 0;
+      padding: 0;
+      color: #333;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(to right, #0f3443, #0f5132);
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      border-bottom: 4px solid #ffd700;
+      border-radius: 0 0 20px 20px;
+    }
+
+    .logo {
+      font-size: 2.5em;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px #ffd700, 0 0 20px #ff9900;
+      transform: perspective(500px) rotateY(10deg);
+      transition: transform 0.3s;
+    }
+
+    .logo:hover {
+      transform: perspective(500px) rotateY(0deg) scale(1.1);
+    }
+
+    .title {
+      font-size: 2.2em;
+      font-weight: bold;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    }
+
+    .home-btn {
+      font-size: 2.5em;
+      cursor: pointer;
+      transition: transform 0.3s;
+      text-decoration: none;
+    }
+
+    .home-btn:hover {
+      transform: scale(1.2) rotate(10deg);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      backdrop-filter: blur(10px);
+    }
+
+    .description {
+      margin-bottom: 40px;
+      line-height: 1.8;
+      font-size: 1.1em;
+    }
+
+    .description h2 {
+      color: #0f3443;
+      border-bottom: 3px solid #ffd700;
+      padding-bottom: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+      background: #fff;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 16px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background: #0f3443;
+      color: white;
+      font-weight: bold;
+    }
+
+    .input-cell {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      text-align: center;
+      font-size: 1em;
+      background: transparent;
+    }
+
+    .result-cell {
+      font-weight: bold;
+      background: #e8f5e9;
+    }
+
+    input[readonly] {
+      background: transparent;
+      cursor: default;
+    }
+
+    .formula-section {
+      background: #e8f5e9;
+      padding: 25px;
+      border-radius: 12px;
+      margin: 40px 0;
+      border-left: 6px solid #4caf50;
+    }
+
+    .buttons {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .buttons button {
+      padding: 14px 32px;
+      margin: 0 15px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      background: linear-gradient(45deg, #0f3443, #1e6f5c);
+      color: white;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      transition: all 0.3s;
+    }
+
+    .buttons button:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    }
+
+    .video-btn {
+      background: linear-gradient(45deg, #d32f2f, #f44336) !important;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">⚡AKhack7</div>
+    <div class="title">ACOS Formula</div>
+    <a href="https://akhack7.github.io/Excel/Home/h.html" class="home-btn" target="_blank">🏠</a>
+  </header>
+
+  <div class="container">
+
+    <div class="description">
+      <h2>Description (English)</h2>
+      <p>The <strong>ACOS</strong> function in Excel returns the arccosine (inverse cosine) of a number. The result is the angle (in radians) whose cosine is the given number. The value must be between -1 and 1, otherwise it returns an error.</p>
+
+      <h2>विवरण (हिंदी)</h2>
+      <p><strong>ACOS</strong> फंक्शन एक्सेल में किसी संख्या का आर्ककोसाइन (इनवर्स कोसाइन) लौटाता है। परिणाम वह कोण (रेडियन में) होता है जिसका कोसाइन दी गई संख्या है। संख्या का मान -1 से 1 के बीच होना चाहिए, अन्यथा यह एरर देता है।</p>
+    </div>
+
+    <!-- Fixed Example Table -->
+    <h2 style="color:#0f3443; text-align:center;">Example (Fixed Values)</h2>
+    <table>
+      <tr>
+        <th></th>
+        <th></th>
+        <th>A</th>
+        <th>B</th>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td></td><td></td><td>Number</td><td>ACOS</td>
+      </tr>
+      <tr>
+        <td></td><td></td><td>-0.5</td><td>2.094395102</td>
+      </tr>
+      <tr>
+        <td></td><td></td><td>0.5</td><td>1.047197551</td>
+      </tr>
+    </table>
+
+    <!-- Formula Explanation -->
+    <div class="formula-section">
+      <h2 style="color:#1e6f5c;">Formula</h2>
+      <p style="font-size:1.4em; font-weight:bold; color:#d32f2f;">
+        =ACOS(number)
+      </p>
+      <p><strong>English:</strong> Returns the arccosine of a number in radians (between 0 and π). The number must be between -1 and 1.</p>
+      <p><strong>हिंदी:</strong> किसी संख्या का आर्ककोसाइन रेडियन में लौटाता है (0 से π के बीच)। संख्या -1 से 1 के बीच होनी चाहिए।</p>
+    </div>
+
+    <!-- Interactive Practice Table -->
+    <h2 style="color:#0f3443; text-align:center;">Practice Yourself (Edit Numbers & See Live Result)</h2>
+    <table>
+      <tr>
+        <th></th>
+        <th></th>
+        <th>A</th>
+        <th>B</th>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td></td><td></td>
+        <td><input type="text" value="Number" readonly class="input-cell"></td>
+        <td><input type="text" value="ACOS" readonly class="input-cell"></td>
+      </tr>
+      <tr>
+        <td></td><td></td>
+        <td><input type="number" id="num1" value="-0.5" step="0.01" min="-1" max="1" class="input-cell" onchange="calculate()"></td>
+        <td><input type="text" id="res1" readonly class="input-cell result-cell"></td>
+      </tr>
+      <tr>
+        <td></td><td></td>
+        <td><input type="number" id="num2" value="0.5" step="0.01" min="-1" max="1" class="input-cell" onchange="calculate()"></td>
+        <td><input type="text" id="res2" readonly class="input-cell result-cell"></td>
+      </tr>
+    </table>
+
+    <div class="buttons">
+      <button onclick="window.open('https://akhack7.github.io/Excel/A/average.html')">← Previous</button>
+      <button onclick="alert('Next Page')">Next →</button>
+      <button class="video-btn" onclick="window.open('https://www.youtube.com/results?search_query=excel+acos+function+tutorial', '_blank')">📹 Video Tutorial</button>
+    </div>
+
+  </div>
+
+  <script>
+    function calculate() {
+      // First row
+      const val1 = parseFloat(document.getElementById('num1').value);
+      if (isNaN(val1) || val1 < -1 || val1 > 1) {
+        document.getElementById('res1').value = "#NUM!";
+      } else {
+        document.getElementById('res1').value = Math.acos(val1).toFixed(9);
+      }
+
+      // Second row
+      const val2 = parseFloat(document.getElementById('num2').value);
+      if (isNaN(val2) || val2 < -1 || val2 > 1) {
+        document.getElementById('res2').value = "#NUM!";
+      } else {
+        document.getElementById('res2').value = Math.acos(val2).toFixed(9);
+      }
+    }
+
+    // Initial calculation on load
+    calculate();
+  </script>
+
+</body>
+</html>
 
