@@ -118,7 +118,8 @@
             justify-content: space-between;
             margin-top: 40px;
         }
-        button {
+        /* <a> ko button jaisa banaya */
+        .buttons a {
             padding: 12px 30px;
             font-size: 18px;
             border: none;
@@ -126,11 +127,13 @@
             cursor: pointer;
             transition: all 0.3s;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
         }
         .next { background: #27ae60; color: white; }
-        .prev { background: #95a5a6; color: white; }
         .video { background: #e74c3c; color: white; }
-        button:hover {
+        .buttons a:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
@@ -141,14 +144,14 @@
     <header>
         <div class="logo">⚡ AKhack7</div>
         <div class="title">ABS (Absolute Value) Formula</div>
-        <div class="home" title="Home">🏠</div>
+        <div class="home" title="Home" onclick="alert('Home page पर जाएँ!')">🏠</div>
     </header>
 
     <div class="container">
         <div class="description">
             <h3>English Description</h3>
             <p>The ABS function in Excel returns the absolute value of a number. The absolute value of a number is the number without its sign (positive or negative). It always returns a positive number.</p>
-            
+
             <h3>हिंदी विवरण</h3>
             <p>Excel में ABS फंक्शन किसी संख्या का निरपेक्ष मान (Absolute Value) लौटाता है। निरपेक्ष मान का मतलब है कि संख्या बिना उसके चिन्ह (धनात्मक या ऋणात्मक) के होती है। यह हमेशा धनात्मक संख्या ही लौटाता है।</p>
         </div>
@@ -198,9 +201,10 @@
             </tbody>
         </table>
 
+        <!-- Navigation Buttons (Fixed) -->
         <div class="buttons">
-            <button class="video">📹 Watch Video</button>
-            <button class="next">Next →</button>
+            <a href="#" class="video" target="_blank">📹 Watch Video</a>
+            <a href="https://akhack7.github.io/Excel/A/accrint.html" class="next">Next →</a>
         </div>
     </div>
 
@@ -211,7 +215,7 @@
                 const row = this.parentElement.parentElement;
                 const resultCell = row.querySelector('.result');
                 const value = parseFloat(this.value);
-                
+
                 if (!isNaN(value)) {
                     resultCell.textContent = Math.abs(value);
                 } else {
@@ -230,18 +234,8 @@
             }
         });
 
-        // Button actions (you can link these later)
-        document.querySelector('.next').onclick = () => {
-            window.location.href = "https://akhack7.github.io/Excel/A/accrint.html";
-        };
-        
-        document.querySelector('.video').onclick = () => {
-            // यहाँ अपना YouTube वीडियो लिंक डाल सकते हैं
-            window.open('https://www.youtube.com/results?search_query=excel+abs+function+hindi', '_blank');
-        };
-        document.querySelector('.home').onclick = () => {
-            alert('Home page पर जाएँ!');
-        };
+        // Video button ka actual link (YouTube search)
+        document.querySelector('.video').href = 'https://www.youtube.com/results?search_query=excel+abs+function+hindi';
     </script>
 </body>
 </html>
